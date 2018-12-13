@@ -15,7 +15,8 @@ public class MacroManager{
 		while(keepGoing == true){
 			System.out.println("============================");
 			System.out.println("1. Edit Profile");
-			System.out.println("2. Add item to Food Log");
+			System.out.println("2. Add item to food log");
+			System.out.println("3. Remove item from food log");
 			System.out.println("4. Print Log");
 			
 			user.printProfile();
@@ -29,6 +30,9 @@ public class MacroManager{
 				case 2:
 					item.addEntry();
 					break;
+				case 3:
+					item.deleteEntry();
+					break;	
 				case 4:
 					item.printLog();
 					break;
