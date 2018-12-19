@@ -31,7 +31,7 @@ public class MacroManager{
 					item.addEntry();
 					break;
 				case 3:
-					item.deleteEntry();
+					//item.deleteEntry();
 					break;	
 				case 4:
 					item.printLog();

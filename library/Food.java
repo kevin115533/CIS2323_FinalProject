@@ -6,6 +6,7 @@ public class Food{
 	private int protein = 0;
 	private int carbs = 0;
 	private int fat = 0;
+	private int calories = 0;
 	String userIn;
 	int userAmount;
 	Scanner input = new Scanner(System.in);
@@ -15,6 +16,7 @@ public class Food{
 		setPro();
 		setCar();
 		setFat();
+		setCal();
 	}
 	
 	public void setName(){
@@ -23,22 +25,26 @@ public class Food{
 		name = userIn;	
 	}
 	
-	public void setPro(int a){
+	public void setPro(){
 		System.out.print("Enter protein value: ");
 		userAmount = input.nextInt();
-		protein = (userAmount * 4);	
+		protein = userAmount;	
 	}
 	
-	public void setCar(int a){
+	public void setCar(){
 		System.out.print("Enter carb value: ");
 		userAmount = input.nextInt();
-		carbs = (userAmount * 4);	
+		carbs = userAmount;	
 	}
 	
-	public void setFat(int a){
+	public void setFat(){
 		System.out.print("Enter fat value: ");
 		userAmount = input.nextInt();
-		fat = (userAmount * 9);
+		fat = userAmount;
+	}
+	
+	public void setCal(){
+		calories = (protein * 4) + (carbs * 4) + (fat * 9);
 	}
 	
 	public int getPro(){
@@ -53,9 +59,21 @@ public class Food{
 		return fat;	
 	}
 	
+	public int getCal(){
+		return calories;	
+	}
+	
 	public String getName(){
 		return name;	
 	}
 	
+	public void printFood(){
+		System.out.println("." + getName() +
+							"  Pro: " + getPro() + "g" +
+							"  Car: " + getCar() + "g" +
+							"  Fat: " + getFat() + "g" +
+						    "  Calories: " + getCal());
+	}
 	
+
 }
